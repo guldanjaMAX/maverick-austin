@@ -62,12 +62,13 @@
     }
 
     .nav-brand {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--cream);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 28px;
+      width: auto;
     }
 
     .nav-links {
@@ -979,13 +980,10 @@
       border-top: 1px solid rgba(255,255,255,0.04);
     }
 
-    .footer-brand {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--sand);
-      margin-bottom: 0.5rem;
+    .footer-logo {
+      height: 36px;
+      width: auto;
+      margin-bottom: 1rem;
     }
 
     .footer-copy {
@@ -1069,7 +1067,7 @@
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <a href="#" class="nav-brand">Maverick1000</a>
+    <a href="#" class="nav-brand"><img src="images/maverick-logo.png" alt="Maverick1000" class="nav-logo"></a>
     <div class="nav-links">
       <a href="#mental-health">The Mission</a>
       <a href="#journey">The Framework</a>
@@ -1338,7 +1336,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p class="footer-brand">Maverick1000</p>
+    <img src="images/maverick-logo.png" alt="Maverick1000" class="footer-logo">
     <p class="footer-copy">&copy; 2026 Maverick1000. All rights reserved.</p>
     <div class="footer-contact">
       <a href="mailto:events@maverickdna.com">events@maverickdna.com</a>
