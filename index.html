@@ -711,10 +711,25 @@
       background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
     }
 
-    .green-break-logo {
-      width: 160px;
-      margin: 0 auto 2rem;
-      display: block;
+    .green-break-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 26, 0.7);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .green-break-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-style: italic;
+      color: rgba(26, 26, 26, 0.8);
+      max-width: 500px;
+      margin: 2rem auto 0;
+      line-height: 1.7;
       position: relative;
       z-index: 1;
     }
@@ -1414,10 +1429,11 @@
     </div>
   </section>
 
-  <!-- GREEN INTERSTITIAL -->
+  <!-- YOUR STORY BREAK -->
   <section class="green-break">
-    <img src="images/maverick-logo.png" alt="Maverick1000" class="green-break-logo" loading="lazy">
+    <p class="green-break-eyebrow">The Quiet Thoughts You Carry</p>
     <img src="images/handwritten-notes.png" alt="Handwritten notes about self-doubt and growth" class="green-break-notes" loading="lazy">
+    <p class="green-break-caption">You've felt this. So has every entrepreneur in the room. At ENOUGH, those quiet thoughts become the starting point for transformation.</p>
   </section>
 
   <!-- 3X FRAMEWORK -->
