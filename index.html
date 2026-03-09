@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3X Austin | Maverick1000</title>
+  <meta name="description" content="3X Mastermind: Enough. Austin, TX: April 8-10, 2026. The World's Weirdest Mastermind for the World.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #8DB33A;
+      --green-dark: #7AA02E;
+      --black: #0a0a0a;
+      --cream: #F5F0E8;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--white);
+      background: var(--black);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: var(--black);
+      text-align: center;
+      padding: 40px 20px 60px;
+    }
+
+    .hero__logo {
+      width: 180px;
+      margin: 0 auto 50px;
+      display: block;
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.05;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero__date {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero__cta-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn--green {
+      background: var(--green);
+      color: var(--black);
+    }
+
+    .btn--green:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn--outline {
+      border: 2px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn--outline:hover {
+      background: var(--green);
+      color: var(--black);
+      transform: translateY(-2px);
+    }
+
+    /* ===== MANIFESTO ===== */
+    .manifesto {
+      background: var(--black);
+      text-align: center;
+      padding: 40px 20px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .manifesto__headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 30px;
+    }
+
+    .manifesto__subhead {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.4;
+    }
+
+    /* ===== BLAKE SECTION ===== */
+    .blake {
+      background: var(--black);
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .blake__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .blake__quote-section {
+      text-align: right;
+    }
+
+    .blake__quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .blake__image-wrap {
+      text-align: center;
+    }
+
+    .blake__image {
+      width: 280px;
+      border-radius: 8px;
+    }
+
+    .blake__name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-top: 10px;
+    }
+
+    .blake__bio {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.6;
+      margin-top: 20px;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== ENOUGH BRACELET ===== */
+    .enough-bracelet {
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    .enough-bracelet img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== CHANGING THE WAY ===== */
+    .changing {
+      background: var(--cream);
+      color: var(--text-dark);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .changing__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+    }
+
+    .changing__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      color: #333;
+    }
+
+    .changing__subtext {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 850px;
+      margin: 30px auto 0;
+      color: #444;
+      font-style: italic;
+    }
+
+    /* ===== WHY MENTAL HEALTH ===== */
+    .why-mh {
+      background: var(--cream);
+      padding: 0 20px 60px;
+      text-align: center;
+    }
+
+    .why-mh__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .why-mh__subtitle {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+    }
+
+    .why-mh__hands {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .why-mh__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    /* ===== MAVERICK GREEN SECTION ===== */
+    .maverick-green {
+      background: var(--green);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .maverick-green__logo {
+      width: 200px;
+      margin: 0 auto 30px;
+      display: block;
+    }
+
+    .maverick-green__notes {
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 16px;
+    }
+
+    /* ===== 3X FRAMEWORK ===== */
+    .framework {
+      background: var(--cream);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .framework__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--text-dark);
+      margin-bottom: 60px;
+    }
+
+    .framework__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .framework__card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .framework__day {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .framework__tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+
+    .framework__desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ===== VENUE (AWKN RANCH) ===== */
+    .venue {
+      position: relative;
+      background: var(--black);
+      color: var(--white);
+      min-height: 600px;
+    }
+
+    .venue__bg {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .venue__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .venue__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .venue__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .venue__subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .venue__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .venue__quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      color: var(--white);
+      max-width: 700px;
+      line-height: 1.5;
+    }
+
+    /* ===== REGISTER ===== */
+    .register {
+      background: var(--black);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .register__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 50px;
+    }
+
+    .register__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 800px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .register__tier {
+      text-align: center;
+    }
+
+    .register__tier-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .register__price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .register__note {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    /* ===== MEMBERSHIP LINK ===== */
+    .membership {
+      background: var(--black);
+      text-align: center;
+      padding: 20px 20px 40px;
+    }
+
+    .membership__link {
+      color: var(--green);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .membership__link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      background: var(--cream);
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq--full {
+      max-width: none;
+      background: var(--cream);
+    }
+
+    .faq__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .faq__inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq__item {
+      margin-bottom: 35px;
+    }
+
+    .faq__question {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .faq__answer {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .faq__answer a {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .blake__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .blake__quote-section {
+        text-align: center;
+        order: 2;
+      }
+
+      .blake__image-wrap {
+        order: 1;
+      }
+
+      .framework__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .register__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .venue__overlay {
+        padding: 30px;
+      }
+
+      .hero__title {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <img src="images/maverick-logo.png" alt="Maverick1000 Logo" class="hero__logo">
+    <h1 class="hero__title">3X Mastermind: Enough</h1>
+    <p class="hero__date">Austin, TX: April 8–10, 2026</p>
+    <div class="hero__cta-row">
+      <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn--green">Member RSVP</a>
+      <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn--outline">Apply as a Guest</a>
+    </div>
+  </section>
+
+  <!-- ===== MANIFESTO ===== -->
+  <section class="manifesto">
+    <h2 class="manifesto__headline">The World's "Weirdest" Mastermind for the World. You Contribute. You Do all the "Work." And You Love Every Minute of it.</h2>
+    <p class="manifesto__subhead">Wanted: Your Brainpower, Talents, Resources and Network for Projects That Matter (Including Yours)</p>
+  </section>
+
+  <!-- ===== BLAKE MYCOSKIE ===== -->
+  <section class="blake">
+    <div class="blake__grid">
+      <div class="blake__quote-section">
+        <p class="blake__quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
+      </div>
+      <div class="blake__image-wrap">
+        <img src="images/blake-mycoskie.png" alt="Blake Mycoskie" class="blake__image">
+        <p class="blake__name">Blake Mycoskie</p>
+      </div>
+    </div>
+    <p class="blake__bio">Founder of Tom's Shoes, the One for One Movement and lover of life. Blake is re-defining entrepreneurship to bring mental health, purpose, and social good to the forefront of business and culture</p>
+  </section>
+
+  <!-- ===== ENOUGH BRACELET ===== -->
+  <div class="enough-bracelet">
+    <img src="images/enough-bracelet.png" alt="Enough Bracelet">
+  </div>
+
+  <!-- ===== CHANGING THE WAY ===== -->
+  <section class="changing">
+    <h2 class="changing__title">Changing the Way Business is Played</h2>
+    <p class="changing__text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. ENOUGH was created to rewire culture and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
+    <p class="changing__text">This ENOUGH movement is out to spread the word with 100% of profits fund mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default.</p>
+    <p class="changing__subtext">As Mavericks, we're out to "Change the Way Business is Played." We believe that business can and should be the greatest lever for good, so this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter — including yours.</p>
+  </section>
+
+  <!-- ===== WHY MENTAL HEALTH ===== -->
+  <section class="why-mh">
+    <h2 class="why-mh__title">Maverick of Mental Health: Enough</h2>
+    <h3 class="why-mh__subtitle">Let's Put Your Brainpower, Talents, Resources and Network to Work for Mental Health Projects</h3>
+    <img src="images/hands-bracelet.jpg" alt="Enough bracelet on hands" class="why-mh__hands">
+    <p class="why-mh__text">Mavericks are needed more than ever who think different around the Mental Health crisis facing our world. The numbers are striking with nearly 1 in 5 U.S. adults (roughly 60 million people) live with a mental illness (3X more than cancer). Youth mental health is an alarming issue with 15.4% of youth (12–17) experiencing a major depressive episode in 2024. Mavericks are here to make a dent in this issue.</p>
+  </section>
+
+  <!-- ===== WHY MENTAL HEALTH TITLE ===== -->
+  <section class="changing" style="padding-top: 0;">
+    <h2 class="why-mh__title" style="margin-bottom: 0;">Why Mental Health?</h2>
+  </section>
+
+  <!-- ===== MAVERICK GREEN / HANDWRITTEN NOTES ===== -->
+  <section class="maverick-green">
+    <img src="images/maverick-logo.png" alt="Maverick1000" class="maverick-green__logo">
+    <img src="images/handwritten-notes.png" alt="Handwritten notes about self-doubt and growth" class="maverick-green__notes">
+  </section>
+
+  <!-- ===== 3X FRAMEWORK ===== -->
+  <section class="framework">
+    <h2 class="framework__title">3X Framework</h2>
+    <div class="framework__grid">
+      <div class="framework__card">
+        <h3 class="framework__day">Day 1: Growth &amp; Impact</h3>
+        <p class="framework__tagline">Learn. Explore. Contribute.</p>
+        <p class="framework__desc">Part 1: We put you to work. Together we will use our talents, brainpower, resources and network to amplify projects that matter like Enough. Plus other initiatives from Mavericks of Mental Health. (Nominations are open for projects)</p>
+        <br>
+        <p class="framework__desc">Part 2: Conversations and learning around mental health, optimization, resilience, etc.</p>
+      </div>
+      <div class="framework__card">
+        <h3 class="framework__day">Day 2: Mastermind</h3>
+        <p class="framework__tagline">You in the Hot Seat. The Room Has Your Back.</p>
+        <p class="framework__desc">This is where you get time in the hot seat, or shall we say "Love Seat!?" You'll have the power of the collective network there to support you on what matters most. This can be around an opportunity or challenge in business or your personal life — and the group catalyzes new ideas, resources, strategies and connections.</p>
+      </div>
+      <div class="framework__card">
+        <h3 class="framework__day">Day 3: Integration</h3>
+        <p class="framework__tagline">Rest. Reset. Rejuvenate.</p>
+        <p class="framework__desc">Time to be rather than do. You are treated to unique solo and group experiences and activations available. You'll have access to various tools, practitioners and biotech for optimization, restoration and rejuvenation.</p>
+        <br>
+        <p class="framework__desc">And this also gives you the space to connect even deeper with fellow Mavericks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VENUE ===== -->
+  <section class="venue">
+    <img src="images/awkn-ranch.png" alt="AWKN Ranch venue" class="venue__bg">
+    <div class="venue__overlay">
+      <p class="venue__label">The Space</p>
+      <h2 class="venue__title">AWKN Ranch</h2>
+      <p class="venue__subtitle">Ancient Wisdom Known Now.</p>
+      <p class="venue__text">We've intentionally selected this venue because of their deep commitment to community and wellbeing. AWKN Ranch brings mental health care, therapy with intentional integration, coaching, wellness and community into one beautiful space designed for deep restoration and lasting change.</p>
+      <p class="venue__quote">"Return to the essence of who you are rooted in nature, connected to community, and inspired by the wisdom of the ages." — AWKN Ranch</p>
+    </div>
+  </section>
+
+  <!-- ===== REGISTER ===== -->
+  <section class="register">
+    <h2 class="register__title">Register Now</h2>
+    <div class="register__grid">
+      <div class="register__tier">
+        <p class="register__tier-label">Maverick Members</p>
+        <p class="register__price">$3,500</p>
+        <p class="register__note">(1 Green Credit)</p>
+        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn--green">Member RSVP</a>
+      </div>
+      <div class="register__tier">
+        <p class="register__tier-label">Guests</p>
+        <p class="register__price">$8,500</p>
+        <br>
+        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn--green">Apply as a Guest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEMBERSHIP ===== -->
+  <section class="membership">
+    <p><a href="http://www.maverick1000.com/deets" class="membership__link">Want to learn more about membership? Click here</a></p>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq--full">
+    <div class="faq__inner">
+      <h2 class="faq__title">FAQs</h2>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: What's Included?</p>
+        <p class="faq__answer">A: Growth &amp; Impact Sessions, Mastermind Sessions and Integration Day. Group Lunches, Group Dinners and Refreshments throughout the day. Breakfast will be on your own.</p>
+      </div>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: What about Accommodations?</p>
+        <p class="faq__answer">A: Please let us know if you would like a room at a local hotel we recommend or if you would like to make your own arrangements, i.e. you are local, etc.</p>
+      </div>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: How do I prepare for my hot seat or "Love Seat"?</p>
+        <p class="faq__answer">A: We will give you tips in advance of the event on how to prepare your "ask" of the group to help ensure you get the most value out of the invaluable real-world wisdom and resources in the room.</p>
+      </div>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: Can I nominate a project in the Mental Health space for us to support?</p>
+        <p class="faq__answer">A: ABSOLUTELY! Please email us via <a href="mailto:events@maverickdna.com">events@maverickdna.com</a></p>
+      </div>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: When do I arrive and depart Austin?</p>
+        <p class="faq__answer">A: Please plan to arrive on April 7th and depart on April 11th.</p>
+      </div>
+
+      <div class="faq__item">
+        <p class="faq__question">Q: I live locally, can I just "pop in and out?"</p>
+        <p class="faq__answer">A: There may be an opportunity to join us for one evening based on availability. Please email <a href="mailto:events@maverickdna.com">events@maverickdna.com</a> or check in with someone from Team Green.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
