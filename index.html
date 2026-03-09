@@ -3,758 +3,1273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3X Austin | Maverick1000</title>
+  <title>3X Mastermind: Enough | Austin, TX | Maverick1000</title>
   <meta name="description" content="3X Mastermind: Enough. Austin, TX: April 8-10, 2026. The World's Weirdest Mastermind for the World.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --green: #8DB33A;
-      --green-dark: #7AA02E;
-      --black: #0a0a0a;
-      --cream: #F5F0E8;
+      --accent: #7ab41d;
+      --accent-light: #9dd335;
+      --accent-pale: #d4e8a8;
+      --accent-dark: #5a8c12;
+      --obsidian: #1a1a1a;
+      --obsidian-soft: #222222;
+      --obsidian-lighter: #2a2a2a;
+      --stone: #3d3d3d;
+      --sand: #d4cdc0;
+      --sand-light: #e8e0d0;
+      --cream: #faf8f3;
       --white: #ffffff;
-      --text-dark: #1a1a1a;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--white);
-      background: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      background: var(--obsidian);
+      color: var(--cream);
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
 
-    a {
-      text-decoration: none;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      background: var(--black);
-      text-align: center;
-      padding: 40px 20px 60px;
-    }
-
-    .hero__logo {
-      width: 180px;
-      margin: 0 auto 50px;
-      display: block;
-    }
-
-    .hero__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.05;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero__date {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-top: 10px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero__cta-row {
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
       display: flex;
-      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.4s ease;
+      background: transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 1rem 3rem;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sand);
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 0.65rem 1.5rem;
+      border: 1px solid var(--accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent) !important;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--obsidian) !important;
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(26, 26, 26, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      margin-top: 30px;
+      gap: 2rem;
+    }
+
+    .mobile-menu.active { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--cream);
+      transition: color 0.3s;
+    }
+
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(180deg,
+        rgba(26,26,26,0.6) 0%,
+        rgba(26,26,26,0.3) 40%,
+        rgba(26,26,26,0.5) 70%,
+        rgba(26,26,26,1) 100%
+      );
+    }
+
+    .hero-frame {
+      position: absolute;
+      inset: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--sand);
+      margin-bottom: 1rem;
+    }
+
+    .hero-location {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-location span { color: var(--accent); }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 36px;
-      border-radius: 50px;
-      font-family: 'Inter', sans-serif;
+      padding: 0.9rem 2.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
       font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       cursor: pointer;
+      border: none;
     }
 
-    .btn--green {
-      background: var(--green);
-      color: var(--black);
+    .btn-primary {
+      background: var(--accent);
+      color: var(--obsidian);
     }
 
-    .btn--green:hover {
-      background: var(--green-dark);
+    .btn-primary:hover {
+      background: var(--accent-light);
       transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(122, 180, 29, 0.25);
     }
 
-    .btn--outline {
-      border: 2px solid var(--green);
-      color: var(--green);
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--cream);
       background: transparent;
     }
 
-    .btn--outline:hover {
-      background: var(--green);
-      color: var(--black);
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
       transform: translateY(-2px);
+    }
+
+    /* ===== SECTION UTILITIES ===== */
+    .section-pad { padding: 7rem 2rem; }
+    .section-pad-lg { padding: 9rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .container-narrow { max-width: 800px; margin: 0 auto; }
+    .text-center { text-align: center; }
+
+    .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--sand);
+      max-width: 700px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--accent);
+      margin: 2rem auto;
     }
 
     /* ===== MANIFESTO ===== */
     .manifesto {
-      background: var(--black);
-      text-align: center;
-      padding: 40px 20px 80px;
-      max-width: 1000px;
+      background: var(--obsidian);
+      padding: 5rem 2rem 7rem;
+    }
+
+    .manifesto-inner {
+      max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .manifesto__headline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.3;
-      margin-bottom: 30px;
-    }
-
-    .manifesto__subhead {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
+    .manifesto-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       font-weight: 400;
-      color: var(--green);
-      line-height: 1.4;
+      line-height: 1.5;
+      color: var(--cream);
     }
 
-    /* ===== BLAKE SECTION ===== */
-    .blake {
-      background: var(--black);
-      padding: 60px 20px;
+    .manifesto-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+
+    /* ===== BLAKE / FEATURED SPEAKER ===== */
+    .speaker {
+      background: var(--obsidian-soft);
+      padding: 7rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .speaker::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30rem;
+      position: absolute;
+      top: -5rem;
+      left: 5%;
+      color: rgba(122, 180, 29, 0.04);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .speaker-grid {
       max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .blake__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
       align-items: center;
     }
 
-    .blake__quote-section {
-      text-align: right;
-    }
-
-    .blake__quote {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
+    .speaker-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
       font-style: italic;
-      color: var(--white);
       line-height: 1.5;
-      margin-bottom: 20px;
+      color: var(--cream);
+      margin-bottom: 2rem;
     }
 
-    .blake__image-wrap {
+    .speaker-name {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .speaker-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--sand);
+      line-height: 1.6;
+    }
+
+    .speaker-image-wrap {
+      position: relative;
+    }
+
+    .speaker-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: 10px;
+      left: 10px;
+      border: 1px solid var(--accent);
+      opacity: 0.3;
+    }
+
+    .speaker-image {
+      width: 100%;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .speaker-bio {
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--sand);
       text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .blake__image {
-      width: 280px;
+    /* ===== FULL WIDTH IMAGE BREAK ===== */
+    .image-break {
+      width: 100%;
+      overflow: hidden;
+      max-height: 400px;
+    }
+
+    .image-break img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== CHANGING / MISSION ===== */
+    .mission {
+      background: var(--cream);
+      color: var(--obsidian);
+      padding: 7rem 2rem;
+    }
+
+    .mission .section-title { color: var(--obsidian); }
+    .mission .eyebrow { color: var(--accent-dark); }
+
+    .mission-text {
+      font-size: 1rem;
+      line-height: 2;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .mission-highlight {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--accent-dark);
+      max-width: 750px;
+      margin: 2.5rem auto 0;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    /* ===== MENTAL HEALTH / IMPACT ===== */
+    .impact {
+      background: var(--cream);
+      color: var(--obsidian);
+      padding: 0 2rem 7rem;
+    }
+
+    .impact-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .impact-image {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .impact .section-title { color: var(--accent-dark); }
+    .impact .eyebrow { color: var(--accent-dark); }
+
+    .impact-text {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #444;
+    }
+
+    .impact-stat {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      margin: 1rem 0;
+    }
+
+    .impact-stat-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== GREEN INTERSTITIAL ===== */
+    .green-break {
+      background: var(--accent);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .green-break::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
+    }
+
+    .green-break-logo {
+      width: 160px;
+      margin: 0 auto 2rem;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .green-break-notes {
+      max-width: 450px;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      z-index: 1;
       border-radius: 8px;
     }
 
-    .blake__name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-top: 10px;
+    /* ===== 3X FRAMEWORK / JOURNEY ===== */
+    .journey {
+      background: var(--obsidian);
+      padding: 7rem 2rem;
     }
 
-    .blake__bio {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: #ccc;
-      line-height: 1.6;
-      margin-top: 20px;
+    .journey-header {
       text-align: center;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 5rem;
     }
 
-    /* ===== ENOUGH BRACELET ===== */
-    .enough-bracelet {
-      width: 100%;
-      margin: 40px 0;
-    }
-
-    .enough-bracelet img {
-      width: 100%;
-      display: block;
-    }
-
-    /* ===== CHANGING THE WAY ===== */
-    .changing {
-      background: var(--cream);
-      color: var(--text-dark);
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .changing__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 30px;
-    }
-
-    .changing__text {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: 0 auto 20px;
-      color: #333;
-    }
-
-    .changing__subtext {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      line-height: 1.8;
-      max-width: 850px;
-      margin: 30px auto 0;
-      color: #444;
-      font-style: italic;
-    }
-
-    /* ===== WHY MENTAL HEALTH ===== */
-    .why-mh {
-      background: var(--cream);
-      padding: 0 20px 60px;
-      text-align: center;
-    }
-
-    .why-mh__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 400;
-      color: var(--green);
-      margin-bottom: 10px;
-    }
-
-    .why-mh__subtitle {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 30px;
-    }
-
-    .why-mh__hands {
-      max-width: 500px;
-      margin: 0 auto 40px;
-      border-radius: 12px;
-      display: block;
-    }
-
-    .why-mh__text {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      max-width: 900px;
-      margin: 0 auto;
-      color: #333;
-    }
-
-    /* ===== MAVERICK GREEN SECTION ===== */
-    .maverick-green {
-      background: var(--green);
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .maverick-green__logo {
-      width: 200px;
-      margin: 0 auto 30px;
-      display: block;
-    }
-
-    .maverick-green__notes {
-      max-width: 500px;
-      margin: 0 auto;
-      border-radius: 16px;
-    }
-
-    /* ===== 3X FRAMEWORK ===== */
-    .framework {
-      background: var(--cream);
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .framework__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--text-dark);
-      margin-bottom: 60px;
-    }
-
-    .framework__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+    .journey-grid {
       max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
 
-    .framework__card {
-      text-align: center;
-      padding: 20px;
+    .journey-card {
+      background: var(--obsidian-soft);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: background 0.4s;
     }
 
-    .framework__day {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
+    .journey-card:hover { background: var(--obsidian-lighter); }
+
+    .journey-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(122, 180, 29, 0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .journey-day {
+      font-size: 0.65rem;
       font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--text-dark);
-      margin-bottom: 8px;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
     }
 
-    .framework__tagline {
-      font-family: 'Inter', sans-serif;
+    .journey-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .journey-tagline {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 20px;
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
     }
 
-    .framework__desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #444;
+    .journey-desc {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--sand);
     }
 
-    /* ===== VENUE (AWKN RANCH) ===== */
+    .journey-desc + .journey-desc { margin-top: 1rem; }
+
+    /* ===== VENUE ===== */
     .venue {
       position: relative;
-      background: var(--black);
-      color: var(--white);
-      min-height: 600px;
-    }
-
-    .venue__bg {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      display: block;
-      opacity: 0.6;
-    }
-
-    .venue__overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
+      min-height: 80vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
+      align-items: center;
+      overflow: hidden;
     }
 
-    .venue__label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 10px;
+    .venue-bg {
+      position: absolute;
+      inset: 0;
     }
 
-    .venue__title {
-      font-family: 'Playfair Display', serif;
+    .venue-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .venue-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(26,26,26,0.92) 0%,
+        rgba(26,26,26,0.7) 50%,
+        rgba(26,26,26,0.4) 100%
+      );
+    }
+
+    .venue-content {
+      position: relative;
+      z-index: 2;
+      padding: 5rem;
+      max-width: 650px;
+    }
+
+    .venue-title {
+      font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 5px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
     }
 
-    .venue__subtitle {
-      font-family: 'Playfair Display', serif;
+    .venue-subtitle {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem;
       font-style: italic;
-      color: #ccc;
-      margin-bottom: 30px;
+      color: var(--sand);
+      margin-bottom: 2rem;
     }
 
-    .venue__text {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      line-height: 1.8;
-      max-width: 600px;
-      color: #ddd;
-      margin-bottom: 30px;
+    .venue-text {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--sand-light);
+      margin-bottom: 2.5rem;
     }
 
-    .venue__quote {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    .venue-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
       font-style: italic;
-      color: var(--white);
-      max-width: 700px;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: var(--cream);
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--accent);
     }
 
-    /* ===== REGISTER ===== */
-    .register {
-      background: var(--black);
-      padding: 80px 20px;
+    /* ===== REGISTER / PRICING ===== */
+    .pricing {
+      background: var(--obsidian);
+      padding: 7rem 2rem;
+    }
+
+    .pricing-header {
       text-align: center;
+      margin-bottom: 4rem;
     }
 
-    .register__title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 50px;
-    }
-
-    .register__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+    .pricing-grid {
       max-width: 800px;
       margin: 0 auto;
-      align-items: start;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
     }
 
-    .register__tier {
+    .pricing-card {
+      background: var(--obsidian-soft);
+      padding: 3.5rem 2.5rem;
       text-align: center;
+      position: relative;
+      transition: background 0.4s;
     }
 
-    .register__tier-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 3px;
+    .pricing-card:hover { background: var(--obsidian-lighter); }
+
+    .pricing-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 10px;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
     }
 
-    .register__price {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-style: italic;
-      color: var(--white);
-      margin-bottom: 5px;
+    .pricing-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
     }
 
-    .register__note {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: #999;
-      margin-bottom: 20px;
-    }
-
-    /* ===== MEMBERSHIP LINK ===== */
-    .membership {
-      background: var(--black);
-      text-align: center;
-      padding: 20px 20px 40px;
-    }
-
-    .membership__link {
-      color: var(--green);
-      font-family: 'Inter', sans-serif;
+    .pricing-note {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-style: italic;
+      color: var(--sand);
+      margin-bottom: 2rem;
     }
 
-    .membership__link:hover {
-      text-decoration: underline;
+    .pricing-includes {
+      text-align: center;
+      max-width: 600px;
+      margin: 3rem auto 0;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .pricing-includes-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-includes-text {
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--sand);
+    }
+
+    .membership-link {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .membership-link a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(122, 180, 29, 0.3);
+      padding-bottom: 2px;
+      transition: all 0.3s;
+    }
+
+    .membership-link a:hover {
+      color: var(--accent-light);
+      border-color: var(--accent-light);
     }
 
     /* ===== FAQ ===== */
     .faq {
       background: var(--cream);
-      padding: 80px 20px;
-      max-width: 1000px;
+      color: var(--obsidian);
+      padding: 7rem 2rem;
+    }
+
+    .faq-inner {
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .faq--full {
-      max-width: none;
-      background: var(--cream);
+    .faq .section-title { color: var(--obsidian); }
+
+    .faq-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
-    .faq__title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      text-align: center;
-      margin-bottom: 50px;
-    }
+    .faq-item:last-child { border-bottom: none; }
 
-    .faq__inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .faq__item {
-      margin-bottom: 35px;
-    }
-
-    .faq__question {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .faq__answer {
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #444;
-    }
-
-    .faq__answer a {
-      color: var(--green-dark);
+    .faq-question {
+      font-size: 0.95rem;
       font-weight: 600;
+      color: var(--obsidian);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--accent-dark);
+      font-weight: 300;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #555;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-top: 0.75rem;
+    }
+
+    .faq-answer a {
+      color: var(--accent-dark);
+      font-weight: 600;
+      border-bottom: 1px solid var(--accent-dark);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--obsidian);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-brand {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--stone);
+    }
+
+    .footer-contact {
+      margin-top: 1rem;
+    }
+
+    .footer-contact a {
+      font-size: 0.75rem;
+      color: var(--accent);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .footer-contact a:hover { border-color: var(--accent); }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .blake__grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+    @media (max-width: 968px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
 
-      .blake__quote-section {
+      .speaker-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
         text-align: center;
-        order: 2;
       }
 
-      .blake__image-wrap {
-        order: 1;
+      .speaker-image-wrap {
+        max-width: 280px;
+        margin: 0 auto;
+        order: -1;
       }
 
-      .framework__grid {
+      .speaker-image-wrap::before { display: none; }
+
+      .journey-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 2px;
       }
 
-      .register__grid {
+      .impact-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 2.5rem;
       }
 
-      .venue__overlay {
-        padding: 30px;
-      }
+      .impact-image { max-width: 300px; }
 
-      .hero__title {
-        font-size: 2.8rem;
-      }
+      .pricing-grid { grid-template-columns: 1fr; }
+
+      .venue-content { padding: 3rem 2rem; }
+
+      .hero-title { font-size: clamp(2.8rem, 8vw, 5rem); }
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 1rem 1.5rem; }
+      .section-pad { padding: 5rem 1.5rem; }
+      .venue-content { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== HERO ===== -->
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-brand">Maverick1000</a>
+    <div class="nav-links">
+      <a href="#journey">The Framework</a>
+      <a href="#venue">The Space</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="nav-cta">RSVP</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#journey">The Framework</a>
+    <a href="#venue">The Space</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026">RSVP</a>
+  </div>
+
+  <!-- HERO -->
   <section class="hero">
-    <img src="images/maverick-logo.png" alt="Maverick1000 Logo" class="hero__logo">
-    <h1 class="hero__title">3X Mastermind: Enough</h1>
-    <p class="hero__date">Austin, TX: April 8–10, 2026</p>
-    <div class="hero__cta-row">
-      <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn--green">Member RSVP</a>
-      <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn--outline">Apply as a Guest</a>
+    <div class="hero-bg">
+      <img src="images/awkn-ranch.png" alt="AWKN Ranch, Austin TX">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-frame"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">A Maverick Experience</p>
+      <h1 class="hero-title">3X Mastermind</h1>
+      <p class="hero-subtitle">Enough</p>
+      <p class="hero-location">Austin, TX <span>&bull;</span> April 8 &ndash; 10, 2026</p>
+      <div class="hero-ctas">
+        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary">Member RSVP</a>
+        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-outline">Apply as a Guest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto fade-in">
+    <div class="manifesto-inner">
+      <div class="divider"></div>
+      <p class="manifesto-text">The World's "Weirdest" Mastermind for the World. You Contribute. You Do all the "Work." And You Love Every Minute of it.</p>
+      <p class="manifesto-sub">Wanted: Your Brainpower, Talents, Resources and Network for Projects That Matter (Including Yours)</p>
     </div>
   </section>
 
-  <!-- ===== MANIFESTO ===== -->
-  <section class="manifesto">
-    <h2 class="manifesto__headline">The World's "Weirdest" Mastermind for the World. You Contribute. You Do all the "Work." And You Love Every Minute of it.</h2>
-    <p class="manifesto__subhead">Wanted: Your Brainpower, Talents, Resources and Network for Projects That Matter (Including Yours)</p>
-  </section>
-
-  <!-- ===== BLAKE MYCOSKIE ===== -->
-  <section class="blake">
-    <div class="blake__grid">
-      <div class="blake__quote-section">
-        <p class="blake__quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
+  <!-- BLAKE MYCOSKIE -->
+  <section class="speaker fade-in">
+    <div class="speaker-grid">
+      <div>
+        <p class="speaker-quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
+        <p class="speaker-name">Blake Mycoskie</p>
+        <p class="speaker-role">Founder of TOMS Shoes &amp; the One for One Movement</p>
       </div>
-      <div class="blake__image-wrap">
-        <img src="images/blake-mycoskie.png" alt="Blake Mycoskie" class="blake__image">
-        <p class="blake__name">Blake Mycoskie</p>
+      <div class="speaker-image-wrap">
+        <img src="images/blake-mycoskie.png" alt="Blake Mycoskie" class="speaker-image">
       </div>
     </div>
-    <p class="blake__bio">Founder of Tom's Shoes, the One for One Movement and lover of life. Blake is re-defining entrepreneurship to bring mental health, purpose, and social good to the forefront of business and culture</p>
+    <p class="speaker-bio">Founder of TOMS Shoes, the One for One Movement and lover of life. Blake is redefining entrepreneurship to bring mental health, purpose, and social good to the forefront of business and culture.</p>
   </section>
 
-  <!-- ===== ENOUGH BRACELET ===== -->
-  <div class="enough-bracelet">
+  <!-- BRACELET BREAK -->
+  <div class="image-break">
     <img src="images/enough-bracelet.png" alt="Enough Bracelet">
   </div>
 
-  <!-- ===== CHANGING THE WAY ===== -->
-  <section class="changing">
-    <h2 class="changing__title">Changing the Way Business is Played</h2>
-    <p class="changing__text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. ENOUGH was created to rewire culture and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
-    <p class="changing__text">This ENOUGH movement is out to spread the word with 100% of profits fund mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default.</p>
-    <p class="changing__subtext">As Mavericks, we're out to "Change the Way Business is Played." We believe that business can and should be the greatest lever for good, so this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter — including yours.</p>
+  <!-- MISSION -->
+  <section class="mission section-pad fade-in">
+    <div class="container-narrow text-center">
+      <p class="eyebrow">The Movement</p>
+      <h2 class="section-title">Changing the Way Business is Played</h2>
+      <div class="divider"></div>
+      <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. ENOUGH was created to rewire culture and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
+      <p class="mission-text">This ENOUGH movement is out to spread the word with 100% of profits funding mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default.</p>
+      <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; including yours.</p>
+    </div>
   </section>
 
-  <!-- ===== WHY MENTAL HEALTH ===== -->
-  <section class="why-mh">
-    <h2 class="why-mh__title">Maverick of Mental Health: Enough</h2>
-    <h3 class="why-mh__subtitle">Let's Put Your Brainpower, Talents, Resources and Network to Work for Mental Health Projects</h3>
-    <img src="images/hands-bracelet.jpg" alt="Enough bracelet on hands" class="why-mh__hands">
-    <p class="why-mh__text">Mavericks are needed more than ever who think different around the Mental Health crisis facing our world. The numbers are striking with nearly 1 in 5 U.S. adults (roughly 60 million people) live with a mental illness (3X more than cancer). Youth mental health is an alarming issue with 15.4% of youth (12–17) experiencing a major depressive episode in 2024. Mavericks are here to make a dent in this issue.</p>
-  </section>
-
-  <!-- ===== WHY MENTAL HEALTH TITLE ===== -->
-  <section class="changing" style="padding-top: 0;">
-    <h2 class="why-mh__title" style="margin-bottom: 0;">Why Mental Health?</h2>
-  </section>
-
-  <!-- ===== MAVERICK GREEN / HANDWRITTEN NOTES ===== -->
-  <section class="maverick-green">
-    <img src="images/maverick-logo.png" alt="Maverick1000" class="maverick-green__logo">
-    <img src="images/handwritten-notes.png" alt="Handwritten notes about self-doubt and growth" class="maverick-green__notes">
-  </section>
-
-  <!-- ===== 3X FRAMEWORK ===== -->
-  <section class="framework">
-    <h2 class="framework__title">3X Framework</h2>
-    <div class="framework__grid">
-      <div class="framework__card">
-        <h3 class="framework__day">Day 1: Growth &amp; Impact</h3>
-        <p class="framework__tagline">Learn. Explore. Contribute.</p>
-        <p class="framework__desc">Part 1: We put you to work. Together we will use our talents, brainpower, resources and network to amplify projects that matter like Enough. Plus other initiatives from Mavericks of Mental Health. (Nominations are open for projects)</p>
-        <br>
-        <p class="framework__desc">Part 2: Conversations and learning around mental health, optimization, resilience, etc.</p>
+  <!-- IMPACT -->
+  <section class="impact fade-in">
+    <div class="impact-grid container">
+      <div>
+        <img src="images/hands-bracelet.jpg" alt="Enough bracelet on hands" class="impact-image">
       </div>
-      <div class="framework__card">
-        <h3 class="framework__day">Day 2: Mastermind</h3>
-        <p class="framework__tagline">You in the Hot Seat. The Room Has Your Back.</p>
-        <p class="framework__desc">This is where you get time in the hot seat, or shall we say "Love Seat!?" You'll have the power of the collective network there to support you on what matters most. This can be around an opportunity or challenge in business or your personal life — and the group catalyzes new ideas, resources, strategies and connections.</p>
-      </div>
-      <div class="framework__card">
-        <h3 class="framework__day">Day 3: Integration</h3>
-        <p class="framework__tagline">Rest. Reset. Rejuvenate.</p>
-        <p class="framework__desc">Time to be rather than do. You are treated to unique solo and group experiences and activations available. You'll have access to various tools, practitioners and biotech for optimization, restoration and rejuvenation.</p>
-        <br>
-        <p class="framework__desc">And this also gives you the space to connect even deeper with fellow Mavericks.</p>
+      <div>
+        <p class="eyebrow">Why Mental Health</p>
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Mavericks of Mental Health</h2>
+        <p class="impact-text">Mavericks are needed more than ever who think differently around the mental health crisis facing our world.</p>
+        <div style="margin: 1.5rem 0;">
+          <p class="impact-stat">1 in 5</p>
+          <p class="impact-stat-label">U.S. adults live with a mental illness (~60 million people)</p>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <p class="impact-stat">15.4%</p>
+          <p class="impact-stat-label">Youth (12&ndash;17) experienced a major depressive episode in 2024</p>
+        </div>
+        <p class="impact-text">That's 3X more than cancer. Mavericks are here to make a dent in this issue.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== VENUE ===== -->
-  <section class="venue">
-    <img src="images/awkn-ranch.png" alt="AWKN Ranch venue" class="venue__bg">
-    <div class="venue__overlay">
-      <p class="venue__label">The Space</p>
-      <h2 class="venue__title">AWKN Ranch</h2>
-      <p class="venue__subtitle">Ancient Wisdom Known Now.</p>
-      <p class="venue__text">We've intentionally selected this venue because of their deep commitment to community and wellbeing. AWKN Ranch brings mental health care, therapy with intentional integration, coaching, wellness and community into one beautiful space designed for deep restoration and lasting change.</p>
-      <p class="venue__quote">"Return to the essence of who you are rooted in nature, connected to community, and inspired by the wisdom of the ages." — AWKN Ranch</p>
+  <!-- GREEN INTERSTITIAL -->
+  <section class="green-break fade-in">
+    <img src="images/maverick-logo.png" alt="Maverick1000" class="green-break-logo">
+    <img src="images/handwritten-notes.png" alt="Handwritten notes about self-doubt and growth" class="green-break-notes">
+  </section>
+
+  <!-- 3X FRAMEWORK -->
+  <section class="journey section-pad" id="journey">
+    <div class="journey-header fade-in">
+      <p class="eyebrow">The Path</p>
+      <h2 class="section-title">3X Framework</h2>
+      <div class="divider"></div>
     </div>
-  </section>
-
-  <!-- ===== REGISTER ===== -->
-  <section class="register">
-    <h2 class="register__title">Register Now</h2>
-    <div class="register__grid">
-      <div class="register__tier">
-        <p class="register__tier-label">Maverick Members</p>
-        <p class="register__price">$3,500</p>
-        <p class="register__note">(1 Green Credit)</p>
-        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn--green">Member RSVP</a>
+    <div class="journey-grid">
+      <div class="journey-card fade-in">
+        <p class="journey-number">01</p>
+        <p class="journey-day">Day 1</p>
+        <h3 class="journey-card-title">Growth &amp; Impact</h3>
+        <p class="journey-tagline">Learn. Explore. Contribute.</p>
+        <p class="journey-desc">We put you to work. Together we will use our talents, brainpower, resources and network to amplify projects that matter like Enough. Plus other initiatives from Mavericks of Mental Health. (Nominations are open for projects)</p>
+        <p class="journey-desc">Conversations and learning around mental health, optimization, resilience, and what it means to truly thrive.</p>
       </div>
-      <div class="register__tier">
-        <p class="register__tier-label">Guests</p>
-        <p class="register__price">$8,500</p>
-        <br>
-        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn--green">Apply as a Guest</a>
+      <div class="journey-card fade-in">
+        <p class="journey-number">02</p>
+        <p class="journey-day">Day 2</p>
+        <h3 class="journey-card-title">Mastermind</h3>
+        <p class="journey-tagline">You in the Hot Seat. The Room Has Your Back.</p>
+        <p class="journey-desc">This is where you get time in the hot seat, or shall we say "Love Seat." You'll have the power of the collective network there to support you on what matters most. This can be around an opportunity or challenge in business or your personal life &mdash; and the group catalyzes new ideas, resources, strategies and connections.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== MEMBERSHIP ===== -->
-  <section class="membership">
-    <p><a href="http://www.maverick1000.com/deets" class="membership__link">Want to learn more about membership? Click here</a></p>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq--full">
-    <div class="faq__inner">
-      <h2 class="faq__title">FAQs</h2>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: What's Included?</p>
-        <p class="faq__answer">A: Growth &amp; Impact Sessions, Mastermind Sessions and Integration Day. Group Lunches, Group Dinners and Refreshments throughout the day. Breakfast will be on your own.</p>
-      </div>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: What about Accommodations?</p>
-        <p class="faq__answer">A: Please let us know if you would like a room at a local hotel we recommend or if you would like to make your own arrangements, i.e. you are local, etc.</p>
-      </div>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: How do I prepare for my hot seat or "Love Seat"?</p>
-        <p class="faq__answer">A: We will give you tips in advance of the event on how to prepare your "ask" of the group to help ensure you get the most value out of the invaluable real-world wisdom and resources in the room.</p>
-      </div>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: Can I nominate a project in the Mental Health space for us to support?</p>
-        <p class="faq__answer">A: ABSOLUTELY! Please email us via <a href="mailto:events@maverickdna.com">events@maverickdna.com</a></p>
-      </div>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: When do I arrive and depart Austin?</p>
-        <p class="faq__answer">A: Please plan to arrive on April 7th and depart on April 11th.</p>
-      </div>
-
-      <div class="faq__item">
-        <p class="faq__question">Q: I live locally, can I just "pop in and out?"</p>
-        <p class="faq__answer">A: There may be an opportunity to join us for one evening based on availability. Please email <a href="mailto:events@maverickdna.com">events@maverickdna.com</a> or check in with someone from Team Green.</p>
+      <div class="journey-card fade-in">
+        <p class="journey-number">03</p>
+        <p class="journey-day">Day 3</p>
+        <h3 class="journey-card-title">Integration</h3>
+        <p class="journey-tagline">Rest. Reset. Rejuvenate.</p>
+        <p class="journey-desc">Time to be rather than do. You are treated to unique solo and group experiences and activations. You'll have access to various tools, practitioners and biotech for optimization, restoration and rejuvenation.</p>
+        <p class="journey-desc">This also gives you the space to connect even deeper with fellow Mavericks.</p>
       </div>
     </div>
   </section>
 
+  <!-- VENUE -->
+  <section class="venue" id="venue">
+    <div class="venue-bg">
+      <img src="images/awkn-ranch.png" alt="AWKN Ranch">
+    </div>
+    <div class="venue-overlay"></div>
+    <div class="venue-content fade-in">
+      <p class="eyebrow">The Space</p>
+      <h2 class="venue-title">AWKN Ranch</h2>
+      <p class="venue-subtitle">Ancient Wisdom Known Now.</p>
+      <p class="venue-text">We've intentionally selected this venue because of their deep commitment to community and wellbeing. AWKN Ranch brings mental health care, therapy with intentional integration, coaching, wellness and community into one beautiful space designed for deep restoration and lasting change.</p>
+      <p class="venue-quote">"Return to the essence of who you are rooted in nature, connected to community, and inspired by the wisdom of the ages."</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing section-pad" id="pricing">
+    <div class="pricing-header fade-in">
+      <p class="eyebrow">Investment</p>
+      <h2 class="section-title">Register Now</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="pricing-grid fade-in">
+      <div class="pricing-card">
+        <p class="pricing-label">Maverick Members</p>
+        <p class="pricing-amount">$3,500</p>
+        <p class="pricing-note">(1 Green Credit)</p>
+        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary">Member RSVP</a>
+      </div>
+      <div class="pricing-card">
+        <p class="pricing-label">Guests</p>
+        <p class="pricing-amount">$8,500</p>
+        <p class="pricing-note">By Application</p>
+        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-primary">Apply as a Guest</a>
+      </div>
+    </div>
+    <div class="pricing-includes fade-in">
+      <p class="pricing-includes-title">What's Included</p>
+      <p class="pricing-includes-text">Growth &amp; Impact Sessions, Mastermind Sessions, Integration Day, Group Lunches, Group Dinners and Refreshments throughout the day. Breakfast will be on your own.</p>
+    </div>
+    <div class="membership-link fade-in">
+      <a href="http://www.maverick1000.com/deets">Want to learn more about membership?</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <div class="text-center fade-in" style="margin-bottom: 3rem;">
+        <p class="eyebrow" style="color: var(--accent-dark);">Questions</p>
+        <h2 class="section-title">FAQs</h2>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">What's Included?</p>
+        <p class="faq-answer">Growth &amp; Impact Sessions, Mastermind Sessions and Integration Day. Group Lunches, Group Dinners and Refreshments throughout the day. Breakfast will be on your own.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">What about Accommodations?</p>
+        <p class="faq-answer">Please let us know if you would like a room at a local hotel we recommend or if you would like to make your own arrangements, i.e. you are local, etc.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">How do I prepare for my hot seat or "Love Seat"?</p>
+        <p class="faq-answer">We will give you tips in advance of the event on how to prepare your "ask" of the group to help ensure you get the most value out of the invaluable real world wisdom and resources in the room.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">Can I nominate a project in the Mental Health space for us to support?</p>
+        <p class="faq-answer">ABSOLUTELY! Please email us via <a href="mailto:events@maverickdna.com">events@maverickdna.com</a></p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">When do I arrive and depart Austin?</p>
+        <p class="faq-answer">Please plan to arrive on April 7th and depart on April 11th.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-question">I live locally, can I just "pop in and out?"</p>
+        <p class="faq-answer">There may be an opportunity to join us for one evening based on availability. Please email <a href="mailto:events@maverickdna.com">events@maverickdna.com</a> or check in with someone from Team Green.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-brand">Maverick1000</p>
+    <p class="footer-copy">&copy; 2026 Maverick1000. All rights reserved.</p>
+    <div class="footer-contact">
+      <a href="mailto:events@maverickdna.com">events@maverickdna.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const spans = navToggle.querySelectorAll('span');
+      if (mobileMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
