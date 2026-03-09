@@ -238,6 +238,17 @@
       margin-bottom: 1rem;
     }
 
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--sand-light);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
     .hero-location {
       font-size: 0.75rem;
       font-weight: 500;
@@ -358,6 +369,64 @@
       line-height: 1.6;
       color: var(--accent);
       margin-top: 2rem;
+    }
+
+    /* ===== MENTAL HEALTH MISSION ===== */
+    .mh-mission {
+      background: linear-gradient(180deg, var(--obsidian) 0%, #0d2200 50%, var(--obsidian) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mh-mission::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(122, 180, 29, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mh-mission .section-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.2;
+    }
+
+    .mh-mission-text {
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--sand-light);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .mh-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(122, 180, 29, 0.15);
+    }
+
+    .mh-stat-item {
+      text-align: center;
+    }
+
+    .mh-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .mh-stat-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--sand);
+      max-width: 200px;
+      margin: 0 auto;
     }
 
     /* ===== BLAKE / FEATURED SPEAKER ===== */
@@ -717,6 +786,31 @@
       border-left: 2px solid var(--accent);
     }
 
+    /* ===== MENTAL HEALTH CALLOUT ===== */
+    .mh-callout {
+      background: var(--obsidian);
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(122, 180, 29, 0.1);
+      border-bottom: 1px solid rgba(122, 180, 29, 0.1);
+    }
+
+    .mh-callout-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--cream);
+    }
+
+    .mh-callout-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 1rem;
+    }
+
     /* ===== REGISTER / PRICING ===== */
     .pricing {
       background: var(--obsidian);
@@ -960,6 +1054,8 @@
       .venue-content { padding: 3rem 2rem; }
 
       .hero-title { font-size: clamp(2.8rem, 8vw, 5rem); }
+
+      .mh-stats-row { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
     @media (max-width: 600px) {
@@ -975,6 +1071,7 @@
   <nav class="nav" id="nav">
     <a href="#" class="nav-brand">Maverick1000</a>
     <div class="nav-links">
+      <a href="#mental-health">The Mission</a>
       <a href="#journey">The Framework</a>
       <a href="#venue">The Space</a>
       <a href="#pricing">Pricing</a>
@@ -989,6 +1086,7 @@
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#mental-health">The Mission</a>
     <a href="#journey">The Framework</a>
     <a href="#venue">The Space</a>
     <a href="#pricing">Pricing</a>
@@ -1003,9 +1101,10 @@
     <div class="hero-overlay"></div>
     <div class="hero-frame"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">A Maverick Experience</p>
+      <p class="hero-eyebrow">A Maverick Experience &bull; Mental Health is the Mission</p>
       <h1 class="hero-title">3X Mastermind</h1>
       <p class="hero-subtitle">Enough</p>
+      <p class="hero-tagline">Where visionary entrepreneurs come together to transform the mental health crisis into humanity's greatest breakthrough.</p>
       <p class="hero-location">Austin, TX <span>&bull;</span> April 8 &ndash; 10, 2026</p>
       <div class="hero-ctas">
         <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary">Member RSVP</a>
@@ -1020,6 +1119,31 @@
       <div class="divider"></div>
       <p class="manifesto-text">The World's "Weirdest" Mastermind for the World. You Contribute. You Do all the "Work." And You Love Every Minute of it.</p>
       <p class="manifesto-sub">Wanted: Your Brainpower, Talents, Resources and Network for Projects That Matter (Including Yours)</p>
+    </div>
+  </section>
+
+  <!-- MENTAL HEALTH MISSION -->
+  <section class="mh-mission section-pad" id="mental-health">
+    <div class="container-narrow text-center fade-in">
+      <p class="eyebrow">The Heart of Everything We Do</p>
+      <h2 class="section-title" style="color: var(--cream);">Mental Health<br>is Not a Side Note.<br>It's the Whole Story.</h2>
+      <div class="divider"></div>
+      <p class="mh-mission-text">Every session, every conversation, every connection at this event is rooted in one belief: the mental health crisis is the defining challenge of our generation. And entrepreneurs are uniquely positioned to solve it.</p>
+      <p class="mh-mission-text">The word "Enough" isn't just the name of this event. It's the antidote. Enough is the radical belief that your worth is not tied to your output, your revenue, or your title. Enough is freedom. And when entrepreneurs find that freedom, they change the world.</p>
+      <div class="mh-stats-row">
+        <div class="mh-stat-item">
+          <p class="mh-stat-number">970M+</p>
+          <p class="mh-stat-desc">People worldwide live with a mental health disorder</p>
+        </div>
+        <div class="mh-stat-item">
+          <p class="mh-stat-number">72%</p>
+          <p class="mh-stat-desc">Of entrepreneurs report mental health concerns</p>
+        </div>
+        <div class="mh-stat-item">
+          <p class="mh-stat-number">100%</p>
+          <p class="mh-stat-desc">Of ENOUGH profits fund mental wellness organizations</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1047,11 +1171,11 @@
   <section class="mission section-pad">
     <div class="container-narrow text-center fade-in">
       <p class="eyebrow">The Movement</p>
-      <h2 class="section-title">Changing the Way Business is Played</h2>
+      <h2 class="section-title">Rewiring Culture,<br>One Mind at a Time</h2>
       <div class="divider"></div>
-      <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. ENOUGH was created to rewire culture and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
-      <p class="mission-text">This ENOUGH movement is out to spread the word with 100% of profits funding mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default.</p>
-      <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; including yours.</p>
+      <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. The toll on mental health is staggering and it hits entrepreneurs especially hard. ENOUGH was created to rewire that narrative and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
+      <p class="mission-text">This ENOUGH movement is out to spread the word with 100% of profits funding mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default. Mental health isn't a topic at this event. It's the reason this event exists.</p>
+      <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; starting with the most important project of all: the mental wellbeing of everyone in the room and beyond.</p>
     </div>
   </section>
 
@@ -1130,6 +1254,15 @@
       <p class="venue-subtitle">Ancient Wisdom Known Now.</p>
       <p class="venue-text">We've intentionally selected this venue because of their deep commitment to community and wellbeing. AWKN Ranch brings mental health care, therapy with intentional integration, coaching, wellness and community into one beautiful space designed for deep restoration and lasting change.</p>
       <p class="venue-quote">"Return to the essence of who you are rooted in nature, connected to community, and inspired by the wisdom of the ages."</p>
+    </div>
+  </section>
+
+  <!-- MENTAL HEALTH CALLOUT -->
+  <section class="mh-callout">
+    <div class="container-narrow text-center fade-in">
+      <p class="mh-callout-text">This is not a conference about mental health.<br>This is a gathering of people who believe mental health<br>is the foundation everything else is built on.</p>
+      <div class="divider"></div>
+      <p class="mh-callout-sub">Every dollar. Every session. Every connection. For mental health.</p>
     </div>
   </section>
 
