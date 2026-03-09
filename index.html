@@ -56,7 +56,7 @@
     "organizer": {
       "@type": "Organization",
       "name": "Maverick1000",
-      "url": "http://www.maverick1000.com"
+      "url": "https://www.maverick1000.com"
     },
     "performer": {
       "@type": "Person",
@@ -1291,6 +1291,31 @@
       .nav { padding: 1rem 1.5rem; }
       .section-pad { padding: 5rem 1.5rem; }
       .venue-content { padding: 2rem 1.5rem; }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+      }
+
+      .hero-tagline {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        padding: 0 0.5rem;
+      }
+
+      .green-break-headline {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+      }
+
+      .pricing-card { padding: 2.5rem 1.5rem; }
+
+      .faq-question { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -1304,7 +1329,7 @@
       <a href="#journey">The Framework</a>
       <a href="#venue">The Space</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="nav-cta">RSVP</a>
+      <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="nav-cta" target="_blank" rel="noopener noreferrer">RSVP</a>
     </div>
     <div class="nav-toggle" id="navToggle">
       <span></span>
@@ -1319,7 +1344,7 @@
     <a href="#journey">The Framework</a>
     <a href="#venue">The Space</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026">RSVP</a>
+    <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" target="_blank" rel="noopener noreferrer">RSVP</a>
   </div>
 
   <!-- HERO -->
@@ -1336,8 +1361,8 @@
       <p class="hero-tagline">Where visionary entrepreneurs come together to transform the mental health crisis into humanity's greatest breakthrough.</p>
       <p class="hero-location">Austin, TX <span>&bull;</span> April 8 &ndash; 10, 2026</p>
       <div class="hero-ctas">
-        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary">Member RSVP</a>
-        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-outline">Apply as a Guest</a>
+        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Member RSVP</a>
+        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Apply as a Guest</a>
       </div>
     </div>
   </section>
@@ -1508,13 +1533,13 @@
         <p class="pricing-label">Maverick Members</p>
         <p class="pricing-amount">$3,500</p>
         <p class="pricing-note">(1 Green Credit)</p>
-        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary">Member RSVP</a>
+        <a href="https://maverick.infusionsoft.com/app/orderForms/austin-2026" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Member RSVP</a>
       </div>
       <div class="pricing-card">
         <p class="pricing-label">Guests</p>
         <p class="pricing-amount">$8,500</p>
         <p class="pricing-note">By Application</p>
-        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-primary">Apply as a Guest</a>
+        <a href="https://maverick1000.typeform.com/to/wlLfxQgj" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply as a Guest</a>
       </div>
     </div>
     <div class="pricing-includes fade-in">
@@ -1522,7 +1547,7 @@
       <p class="pricing-includes-text">Growth &amp; Impact Sessions, Mastermind Sessions, Integration Day, Group Lunches, Group Dinners and Refreshments throughout the day. Breakfast will be on your own.</p>
     </div>
     <div class="membership-link fade-in">
-      <a href="http://www.maverick1000.com/deets">Want to learn more about membership?</a>
+      <a href="https://www.maverick1000.com/deets" target="_blank" rel="noopener noreferrer">Want to learn more about membership?</a>
     </div>
   </section>
 
@@ -1633,6 +1658,17 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Fallback: immediately reveal any .fade-in elements already in viewport
+    // (fixes elements that were scrolled past before observer attached)
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible');
+        }
+      });
+    });
 
     // Section-level observer for special animations
     const sectionObserver = new IntersectionObserver((entries) => {
