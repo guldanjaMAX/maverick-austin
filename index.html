@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3X Mastermind: Enough | Austin, TX | Maverick1000</title>
-  <meta name="description" content="3X Mastermind: Enough — a Maverick1000 event dedicated to mental health, entrepreneurial wellness and impact. Austin, TX, April 8–10, 2026. 100% of profits fund mental wellness organizations.">
-  <meta name="keywords" content="Maverick1000, 3X Mastermind, Enough, mental health, entrepreneur wellness, mastermind event, Austin TX, Blake Mycoskie, AWKN Ranch, mental wellness, entrepreneurship">
+  <meta name="description" content="3X Mastermind: Enough — a Maverick1000 event dedicated to mental health, entrepreneurial wellness and impact. Austin, TX, April 8–10, 2026. Featuring projects like ENOUGH and Liber8.">
+  <meta name="keywords" content="Maverick1000, 3X Mastermind, Enough, mental health, entrepreneur wellness, mastermind event, Austin TX, AWKN Ranch, mental wellness, entrepreneurship, Liber8, ENOUGH movement">
   <meta name="author" content="Maverick1000">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://guldanjamax.github.io/maverick-austin/">
@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "3X Mastermind: Enough",
-    "description": "A Maverick1000 event dedicated to mental health and entrepreneurial wellness. Where visionary entrepreneurs come together to transform the mental health crisis into humanity's greatest breakthrough. 100% of profits fund mental wellness organizations.",
+    "description": "A Maverick1000 event dedicated to mental health and entrepreneurial wellness. Where visionary entrepreneurs come together to transform the mental health crisis into humanity's greatest breakthrough. Featuring projects like ENOUGH and Liber8.",
     "startDate": "2026-04-08",
     "endDate": "2026-04-10",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -59,9 +59,9 @@
       "url": "https://www.maverick1000.com"
     },
     "performer": {
-      "@type": "Person",
-      "name": "Blake Mycoskie",
-      "description": "Founder of TOMS Shoes and the One for One Movement"
+      "@type": "Organization",
+      "name": "ENOUGH Movement",
+      "description": "Rewiring culture to remind us our worth is inherent, not earned"
     },
     "offers": [
       {
@@ -278,13 +278,7 @@
       );
     }
 
-    .hero-frame {
-      position: absolute;
-      inset: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      z-index: 3;
-      pointer-events: none;
-    }
+    /* hero-frame removed */
 
     .hero-content {
       position: relative;
@@ -600,6 +594,71 @@
       text-align: center;
       padding-top: 3rem;
       border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ===== LIBER8 SECTION ===== */
+    .liber8 {
+      background: linear-gradient(135deg, #1a2332 0%, #0f1923 50%, #1a2332 100%);
+      padding: 6rem 2rem;
+    }
+
+    .liber8-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .liber8-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .liber8-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .liber8-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      color: rgba(250, 248, 243, 0.7);
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .liber8-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(250, 248, 243, 0.75);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .liber8-link {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(122, 180, 29, 0.3);
+      padding-bottom: 0.25rem;
+      transition: border-color 0.3s;
+    }
+
+    .liber8-link:hover {
+      border-color: var(--accent);
     }
 
     /* ===== FULL WIDTH IMAGE BREAK ===== */
@@ -1353,7 +1412,6 @@
       <img src="images/hero-ranch.jpg" alt="Luxury Ranch Retreat, Texas Hill Country">
     </div>
     <div class="hero-overlay"></div>
-    <div class="hero-frame"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">A Maverick Experience &bull; Mental Health is the Mission</p>
       <h1 class="hero-title">3X Mastermind</h1>
@@ -1395,31 +1453,43 @@
         </div>
         <div class="mh-stat-item">
           <p class="mh-stat-number">100%</p>
-          <p class="mh-stat-desc">Of ENOUGH profits fund mental wellness organizations</p>
+          <p class="mh-stat-desc">Of ENOUGH project profits fund mental wellness organizations</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BLAKE MYCOSKIE -->
+  <!-- ENOUGH MOVEMENT -->
   <section class="speaker fade-in">
     <div class="speaker-grid">
       <div>
         <p class="speaker-quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
-        <p class="speaker-name">Blake Mycoskie</p>
-        <p class="speaker-role">Founder of TOMS Shoes &amp; the One for One Movement</p>
+        <p class="speaker-name">The ENOUGH Movement</p>
+        <p class="speaker-role">Rewiring culture from the inside out</p>
       </div>
       <div class="speaker-image-wrap">
-        <img src="images/blake-mycoskie.png" alt="Blake Mycoskie" class="speaker-image" loading="lazy">
+        <img src="images/enough-bracelet-ai.jpg" alt="ENOUGH bracelet in warm golden light" class="speaker-image" loading="lazy">
       </div>
     </div>
-    <p class="speaker-bio">Founder of TOMS Shoes, the One for One Movement and lover of life. Blake is redefining entrepreneurship to bring mental health, purpose, and social good to the forefront of business and culture.</p>
+    <p class="speaker-bio">ENOUGH is on a mission to shift the way we define worth. 100% of ENOUGH profits fund mental wellness organizations, helping transform and save lives. A member of the ENOUGH leadership team will be joining us in Austin to share the vision and the work being done on the frontlines of this movement.</p>
   </section>
 
   <!-- BRACELET BREAK -->
   <div class="image-break">
     <img src="images/enough-bracelet-ai.jpg" alt="Hands wearing Enough bracelet in warm golden light" loading="lazy">
   </div>
+
+  <!-- LIBER8 -->
+  <section class="liber8 fade-in">
+    <div class="liber8-inner">
+      <p class="liber8-label">Maverick of Mental Health</p>
+      <h2 class="liber8-title">Liber8</h2>
+      <p class="liber8-headline">Solving one of the most complex problems in health and wellbeing: the impact of stuck feelings, emotional patterns, and unresolved trauma.</p>
+      <p class="liber8-body">The current system is failing the people we love. Liber8 was built on fierce advocacy, partnering with top medical advisors and investing over 10,000 hours of research to develop a process that helps people efficiently release the stress, trauma, and emotional patterns their bodies have carried for decades.</p>
+      <p class="liber8-body">Liber8 is one of the featured Mavericks of Mental Health at this gathering, and their work embodies everything this event stands for: real solutions, real science, and real transformation.</p>
+      <a href="https://liber8.health/" target="_blank" rel="noopener noreferrer" class="liber8-link">Learn more about Liber8 &rarr;</a>
+    </div>
+  </section>
 
   <!-- MISSION -->
   <section class="mission section-pad">
@@ -1428,7 +1498,7 @@
       <h2 class="section-title">Rewiring Culture,<br>One Mind at a Time</h2>
       <div class="divider"></div>
       <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. The toll on mental health is staggering and it hits entrepreneurs especially hard. ENOUGH was created to rewire that narrative and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
-      <p class="mission-text">This ENOUGH movement is out to spread the word with 100% of profits funding mental wellness organizations, helping transform and save lives while shifting culture toward a world where feeling "enough" becomes the default. Mental health isn't a topic at this event. It's the reason this event exists.</p>
+      <p class="mission-text">The ENOUGH movement is out to spread the word, with 100% of ENOUGH project profits funding mental wellness organizations. It's about transforming lives and shifting culture toward a world where feeling "enough" becomes the default. Mental health isn't a topic at this event. It's the reason this event exists.</p>
       <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; starting with the most important project of all: the mental wellbeing of everyone in the room and beyond.</p>
     </div>
   </section>
@@ -1476,7 +1546,7 @@
         <p class="journey-day">Day 1</p>
         <h3 class="journey-card-title">Growth &amp; Impact</h3>
         <p class="journey-tagline">Learn. Explore. Contribute.</p>
-        <p class="journey-desc">We put you to work. Together we will use our talents, brainpower, resources and network to amplify projects that matter like Enough. Plus other initiatives from Mavericks of Mental Health. (Nominations are open for projects)</p>
+        <p class="journey-desc">We put you to work. Together we will use our talents, brainpower, resources and network to amplify projects that matter like ENOUGH and Liber8. Plus other initiatives from Mavericks of Mental Health. (Nominations are open for projects)</p>
         <p class="journey-desc">Conversations and learning around mental health, optimization, resilience, and what it means to truly thrive.</p>
       </div>
       <div class="journey-card stagger-item fade-in">
