@@ -31,6 +31,7 @@
   <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Schema.org Event -->
   <script type="application/ld+json">
@@ -1306,6 +1307,236 @@
       transform: scaleX(1);
     }
 
+    /* ===== ENOUGH FEATURED SECTION ===== */
+    .enough-feature {
+      background: linear-gradient(135deg, #1a2a10 0%, #0d1a06 50%, #1a2a10 100%);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .enough-feature::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(122, 180, 29, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .enough-feature-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .enough-feature-content { }
+
+    .enough-feature-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .enough-feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+    }
+
+    .enough-feature-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-style: italic;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+
+    .enough-feature-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(250, 248, 243, 0.75);
+      margin-bottom: 1.5rem;
+    }
+
+    .enough-feature-stat {
+      display: inline-block;
+      background: rgba(122, 180, 29, 0.1);
+      border: 1px solid rgba(122, 180, 29, 0.2);
+      padding: 1.25rem 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .enough-feature-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .enough-feature-stat-desc {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250, 248, 243, 0.6);
+      margin-top: 0.5rem;
+    }
+
+    .enough-feature-link {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(122, 180, 29, 0.3);
+      padding-bottom: 0.25rem;
+      transition: border-color 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    .enough-feature-link:hover { border-color: var(--accent); }
+
+    .enough-feature-image-wrap {
+      position: relative;
+      text-align: center;
+    }
+
+    .enough-feature-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: 10px;
+      left: 10px;
+      border: 1px solid var(--accent);
+      opacity: 0.2;
+    }
+
+    .enough-feature-image {
+      width: 100%;
+      display: block;
+      filter: grayscale(10%);
+    }
+
+    .enough-feature-quote {
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      line-height: 1.6;
+      color: rgba(250, 248, 243, 0.6);
+      text-align: center;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(122, 180, 29, 0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== LIBER8 GRID LAYOUT ===== */
+    .liber8-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .liber8-content { }
+
+    .liber8-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .liber8-founder {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(122, 180, 29, 0.15);
+    }
+
+    .liber8-founder-photo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(122, 180, 29, 0.3);
+    }
+
+    .liber8-founder-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    .liber8-founder-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--sand);
+    }
+
+    .liber8-photo-wrap {
+      position: relative;
+      text-align: center;
+    }
+
+    .liber8-photo-wrap::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: 10px;
+      left: 10px;
+      border: 1px solid rgba(122, 180, 29, 0.25);
+    }
+
+    .liber8-photo {
+      width: 100%;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    /* ===== 3X FRAMEWORK ENHANCED ===== */
+    .journey {
+      background: linear-gradient(180deg, var(--obsidian) 0%, #0d1a06 50%, var(--obsidian) 100%);
+    }
+
+    .journey-card {
+      border-top: 2px solid transparent;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    .journey-card:hover {
+      border-top-color: var(--accent);
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {
       .nav-links { display: none; }
@@ -1324,6 +1555,36 @@
       }
 
       .speaker-image-wrap::before { display: none; }
+
+      .enough-feature-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .enough-feature-image-wrap {
+        max-width: 300px;
+        margin: 0 auto;
+        order: -1;
+      }
+
+      .enough-feature-image-wrap::before { display: none; }
+
+      .liber8-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+
+      .liber8-photo-wrap {
+        max-width: 250px;
+        margin: 0 auto;
+        order: -1;
+      }
+
+      .liber8-photo-wrap::before { display: none; }
+
+      .liber8-founder { justify-content: center; }
 
       .journey-grid {
         grid-template-columns: 1fr;
@@ -1453,84 +1714,10 @@
         </div>
         <div class="mh-stat-item">
           <p class="mh-stat-number">100%</p>
-          <p class="mh-stat-desc">Of ENOUGH project profits fund mental wellness organizations</p>
+          <p class="mh-stat-desc">Of profits from all ENOUGH products go to mental health organizations</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ENOUGH MOVEMENT -->
-  <section class="speaker fade-in">
-    <div class="speaker-grid">
-      <div>
-        <p class="speaker-quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
-        <p class="speaker-name">The ENOUGH Movement</p>
-        <p class="speaker-role">Rewiring culture from the inside out</p>
-      </div>
-      <div class="speaker-image-wrap">
-        <img src="images/enough-bracelet-ai.jpg" alt="ENOUGH bracelet in warm golden light" class="speaker-image" loading="lazy">
-      </div>
-    </div>
-    <p class="speaker-bio">ENOUGH is on a mission to shift the way we define worth. 100% of ENOUGH profits fund mental wellness organizations, helping transform and save lives. A member of the ENOUGH leadership team will be joining us in Austin to share the vision and the work being done on the frontlines of this movement.</p>
-  </section>
-
-  <!-- BRACELET BREAK -->
-  <div class="image-break">
-    <img src="images/enough-bracelet-ai.jpg" alt="Hands wearing Enough bracelet in warm golden light" loading="lazy">
-  </div>
-
-  <!-- LIBER8 -->
-  <section class="liber8 fade-in">
-    <div class="liber8-inner">
-      <p class="liber8-label">Maverick of Mental Health</p>
-      <h2 class="liber8-title">Liber8</h2>
-      <p class="liber8-headline">Solving one of the most complex problems in health and wellbeing: the impact of stuck feelings, emotional patterns, and unresolved trauma.</p>
-      <p class="liber8-body">The current system is failing the people we love. Liber8 was built on fierce advocacy, partnering with top medical advisors and investing over 10,000 hours of research to develop a process that helps people efficiently release the stress, trauma, and emotional patterns their bodies have carried for decades.</p>
-      <p class="liber8-body">Liber8 is one of the featured Mavericks of Mental Health at this gathering, and their work embodies everything this event stands for: real solutions, real science, and real transformation.</p>
-      <a href="https://liber8.health/" target="_blank" rel="noopener noreferrer" class="liber8-link">Learn more about Liber8 &rarr;</a>
-    </div>
-  </section>
-
-  <!-- MISSION -->
-  <section class="mission section-pad">
-    <div class="container-narrow text-center fade-in">
-      <p class="eyebrow">The Movement</p>
-      <h2 class="section-title">Rewiring Culture,<br>One Mind at a Time</h2>
-      <div class="divider"></div>
-      <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. The toll on mental health is staggering and it hits entrepreneurs especially hard. ENOUGH was created to rewire that narrative and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
-      <p class="mission-text">The ENOUGH movement is out to spread the word, with 100% of ENOUGH project profits funding mental wellness organizations. It's about transforming lives and shifting culture toward a world where feeling "enough" becomes the default. Mental health isn't a topic at this event. It's the reason this event exists.</p>
-      <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; starting with the most important project of all: the mental wellbeing of everyone in the room and beyond.</p>
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section class="impact">
-    <div class="impact-grid container fade-in">
-      <div>
-        <img src="images/hands-bracelet.jpg" alt="Enough bracelet on hands" class="impact-image" loading="lazy">
-      </div>
-      <div>
-        <p class="eyebrow">Why Mental Health</p>
-        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Mavericks of Mental Health</h2>
-        <p class="impact-text">Mavericks are needed more than ever who think differently around the mental health crisis facing our world.</p>
-        <div style="margin: 1.5rem 0;">
-          <p class="impact-stat">1 in 5</p>
-          <p class="impact-stat-label">U.S. adults live with a mental illness (~60 million people)</p>
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-          <p class="impact-stat">15.4%</p>
-          <p class="impact-stat-label">Youth (12&ndash;17) experienced a major depressive episode in 2024</p>
-        </div>
-        <p class="impact-text">That's 3X more than cancer. Mavericks are here to make a dent in this issue.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- YOUR STORY BREAK -->
-  <section class="green-break">
-    <p class="green-break-eyebrow">The Quiet Thoughts You Carry</p>
-    <h2 class="green-break-headline">You are enough.<br>Simply because you exist.</h2>
-    <p class="green-break-caption">You've felt this. So has every entrepreneur in the room. At ENOUGH, those quiet thoughts become the starting point for transformation.</p>
   </section>
 
   <!-- 3X FRAMEWORK -->
@@ -1565,6 +1752,100 @@
         <p class="journey-desc">This also gives you the space to connect even deeper with fellow Mavericks.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ENOUGH FEATURED PROJECT -->
+  <section class="enough-feature fade-in">
+    <div class="enough-feature-inner">
+      <div class="enough-feature-content">
+        <p class="enough-feature-label">Featured Maverick of Mental Health</p>
+        <h2 class="enough-feature-title">ENOUGH</h2>
+        <p class="enough-feature-subtitle">A Cultural Intervention, Not a Wellness Trend</p>
+        <p class="enough-feature-body">ENOUGH was created by Blake Mycoskie, the founder of TOMS, after his own battle with depression, anxiety and the relentless pursuit of "more." It exists to rewire the way we define worth and remind people that who they are is already enough.</p>
+        <p class="enough-feature-body">This is not a brand. It is a movement. ENOUGH tackles the root cause of the mental health crisis: the toxic belief that our value is tied to our output, our success, or what we own.</p>
+        <div class="enough-feature-stat">
+          <p class="enough-feature-stat-number">100%</p>
+          <p class="enough-feature-stat-desc">Of profits from all ENOUGH products go to mental health organizations</p>
+        </div>
+        <p class="enough-feature-body">A member of the ENOUGH leadership team will be joining us in Austin to share the vision and the work being done on the frontlines of this movement.</p>
+        <a href="https://weareenough.co/" target="_blank" rel="noopener noreferrer" class="enough-feature-link">Join the ENOUGH Movement &rarr;</a>
+      </div>
+      <div class="enough-feature-image-wrap">
+        <img src="images/enough-bracelet-ai.jpg" alt="ENOUGH bracelet in warm golden light" class="enough-feature-image" loading="lazy">
+      </div>
+    </div>
+    <p class="enough-feature-quote">"Everything I built came from trying to be enough. Everything I'm building now starts from knowing I am enough."</p>
+  </section>
+
+  <!-- BRACELET BREAK -->
+  <div class="image-break">
+    <img src="images/enough-bracelet-ai.jpg" alt="Hands wearing Enough bracelet in warm golden light" loading="lazy">
+  </div>
+
+  <!-- LIBER8 -->
+  <section class="liber8 fade-in">
+    <div class="liber8-grid">
+      <div class="liber8-content">
+        <p class="liber8-label">Featured Maverick of Mental Health</p>
+        <h2 class="liber8-logo-text">Liber8</h2>
+        <p class="liber8-headline">Solving one of the most complex problems in health and wellbeing: the impact of stuck feelings, emotional patterns, and unresolved trauma.</p>
+        <p class="liber8-body">The current system is failing the people we love. Liber8 was built on fierce advocacy, partnering with top medical advisors and investing over 10,000 hours of research to develop a process that helps people efficiently release the stress, trauma, and emotional patterns their bodies have carried for decades.</p>
+        <p class="liber8-body">Liber8 is one of the featured Mavericks of Mental Health at this gathering, and their work embodies everything this event stands for: real solutions, real science, and real transformation.</p>
+        <a href="https://liber8.health/" target="_blank" rel="noopener noreferrer" class="liber8-link">Learn more about Liber8 &rarr;</a>
+        <div class="liber8-founder">
+          <img src="https://www.rajjana.com/wp-content/uploads/2023/12/Raj-Jana.jpg" alt="Raj Jana, CEO of Liber8" class="liber8-founder-photo" loading="lazy">
+          <div>
+            <p class="liber8-founder-name">Raj Jana</p>
+            <p class="liber8-founder-role">CEO &amp; Founder, Liber8</p>
+          </div>
+        </div>
+      </div>
+      <div class="liber8-photo-wrap">
+        <img src="https://www.rajjana.com/wp-content/uploads/2023/12/Raj-Jana.jpg" alt="Raj Jana, CEO of Liber8" class="liber8-photo" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission section-pad">
+    <div class="container-narrow text-center fade-in">
+      <p class="eyebrow">The Movement</p>
+      <h2 class="section-title">Rewiring Culture,<br>One Mind at a Time</h2>
+      <div class="divider"></div>
+      <p class="mission-text">We live in a society that thrives off our insecurities, one that teaches us to measure ourselves by what we do and have, not who we are. The toll on mental health is staggering and it hits entrepreneurs especially hard. ENOUGH was created to rewire that narrative and remind us of the truth: our worth is inherent, not earned. We are enough simply because we exist.</p>
+      <p class="mission-text">The ENOUGH movement is out to spread the word, with 100% of profits from all ENOUGH products going to mental health organizations. It's about transforming lives and shifting culture toward a world where feeling "enough" becomes the default. Mental health isn't a topic at this event. It's the reason this event exists.</p>
+      <p class="mission-highlight">As Mavericks, we believe that business can and should be the greatest lever for good. So this isn't just another "mastermind." We're bringing Maverick Visionary entrepreneurs together to amplify projects that matter &mdash; starting with the most important project of all: the mental wellbeing of everyone in the room and beyond.</p>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="impact">
+    <div class="impact-grid container fade-in">
+      <div>
+        <img src="images/hands-bracelet.jpg" alt="Enough bracelet on hands" class="impact-image" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Why Mental Health</p>
+        <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Mavericks of Mental Health</h2>
+        <p class="impact-text">Mavericks are needed more than ever who think differently around the mental health crisis facing our world.</p>
+        <div style="margin: 1.5rem 0;">
+          <p class="impact-stat">1 in 5</p>
+          <p class="impact-stat-label">U.S. adults live with a mental illness (~60 million people)</p>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <p class="impact-stat">15.4%</p>
+          <p class="impact-stat-label">Youth (12&ndash;17) experienced a major depressive episode in 2024</p>
+        </div>
+        <p class="impact-text">That's 3X more than cancer. Mavericks are here to make a dent in this issue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR STORY BREAK -->
+  <section class="green-break">
+    <p class="green-break-eyebrow">The Quiet Thoughts You Carry</p>
+    <h2 class="green-break-headline">You are enough.<br>Simply because you exist.</h2>
+    <p class="green-break-caption">You've felt this. So has every entrepreneur in the room. At ENOUGH, those quiet thoughts become the starting point for transformation.</p>
   </section>
 
   <!-- VENUE -->
