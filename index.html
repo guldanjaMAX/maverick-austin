@@ -951,6 +951,31 @@
       letter-spacing: 0.05em;
     }
 
+    .testimonial-photo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .testimonial-initials {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: var(--obsidian);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
     .testimonial-nav {
       display: flex;
       align-items: center;
@@ -2058,30 +2083,6 @@
     </div>
   </section>
 
-  <!-- MASTERMIND IMAGE BREAK -->
-  <section class="image-break">
-    <img src="images/mastermind-table.jpg" alt="An intimate round table set for a mastermind session with leather notebooks, candles, and artisan coffee" loading="lazy">
-  </section>
-
-  <!-- WHO'S IN THE ROOM -->
-  <section class="mission section-pad">
-    <div class="container-narrow text-center fade-in">
-      <p class="eyebrow">The Room</p>
-      <h2 class="section-title">Who You'll Be<br>Surrounded By</h2>
-      <div class="divider"></div>
-      <p class="mission-text">Maverick1000 is an invitation only global network of top entrepreneurs and industry transformers. Past Maverick gatherings have included icons like Sir Richard Branson, Sara Blakely, Tony Hawk, Tim Ferriss, John Paul DeJoria, and Russell Simmons. The community has collectively raised over $3M+ for impact projects.</p>
-      <p class="mission-text">This retreat is intentionally kept small. That means every mastermind session goes deep, every conversation matters, and every person in the room brings something extraordinary to the table. You won't just attend this event. You'll get a room full of top founders working on your biggest challenge, and you'll do the same for them.</p>
-      <p class="mission-highlight">Maverick's lifetime mission: to connect visionary leaders and game changers to catalyze business models and new ideas for solving 100 of the world's most impactful issues by 2100.</p>
-    </div>
-  </section>
-
-  <!-- GREEN BREAK -->
-  <section class="green-break">
-    <p class="green-break-eyebrow">The Maverick Way</p>
-    <h2 class="green-break-headline">A Small Room. 3 Days.<br>One Mastermind That Changes Everything.</h2>
-    <p class="green-break-caption">This is what happens when top founders stop performing and start masterminding what matters. Growth, impact, happiness.</p>
-  </section>
-
   <!-- TESTIMONIALS -->
   <section class="testimonials section-pad" id="testimonials">
     <div class="testimonials-header fade-in">
@@ -2095,6 +2096,7 @@
         <div class="testimonial-card">
           <p class="testimonial-quote">This has been absolutely a top ten experience in my life. It's been transformational and inspiring. I would be shocked if I didn't generate at least a million dollars in the next 12 months from the ideas and tactics that I learned from other people, as well as the new relationships and partnerships.</p>
           <div class="testimonial-author">
+            <img src="images/testimonial-drew.jpg" alt="Drew Kossoff" class="testimonial-photo" loading="lazy">
             <div>
               <p class="testimonial-name">Drew Kossoff</p>
               <p class="testimonial-role">CEO, Rainmaker Ad Ventures</p>
@@ -2103,8 +2105,20 @@
         </div>
 
         <div class="testimonial-card">
+          <p class="testimonial-quote">It's been a pleasure working with Yanik Silver and co on solving problems big and small over the past decade through Virgin Unite efforts. 10 years of joy, impact and Maverick mischief together.</p>
+          <div class="testimonial-author">
+            <img src="images/testimonial-branson.jpg" alt="Sir Richard Branson" class="testimonial-photo" loading="lazy">
+            <div>
+              <p class="testimonial-name">Sir Richard Branson</p>
+              <p class="testimonial-role">Founder, Virgin Group</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
           <p class="testimonial-quote">The incredible brain power that's assembled in one room at one time, and the ability to have face to face with leaders in the industry. The movers and the shakers in the business world.</p>
           <div class="testimonial-author">
+            <img src="images/testimonial-spano.jpg" alt="Jim Spano" class="testimonial-photo" loading="lazy">
             <div>
               <p class="testimonial-name">Jim Spano</p>
               <p class="testimonial-role">Real Estate Developer</p>
@@ -2113,8 +2127,20 @@
         </div>
 
         <div class="testimonial-card">
+          <p class="testimonial-quote">After only 9 months, my business has more than doubled, almost tripled. I can already account for these results from the strategies and connections I made at the mastermind. The transformation has been extraordinary.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-initials">BD</span>
+            <div>
+              <p class="testimonial-name">Bernadette Doyle</p>
+              <p class="testimonial-role">Business Owner, Ireland</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
           <p class="testimonial-quote">The people are awesome, just all the different industries they're in, the resources, the experience. You never know who you're going to talk to that will have the missing link that you've been looking for.</p>
           <div class="testimonial-author">
+            <span class="testimonial-initials">JB</span>
             <div>
               <p class="testimonial-name">Joe Barton</p>
               <p class="testimonial-role">Founder, Barton Publishing</p>
@@ -2125,6 +2151,7 @@
         <div class="testimonial-card">
           <p class="testimonial-quote">These are my types of people. They're business people. They're smart, and they take crazy action. We joined because we know this is where we belong, with people who understand the entrepreneurial journey.</p>
           <div class="testimonial-author">
+            <span class="testimonial-initials">LR</span>
             <div>
               <p class="testimonial-name">Lena Requist</p>
               <p class="testimonial-role">Entrepreneur &amp; Business Owner</p>
@@ -2133,38 +2160,9 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">It's been a pleasure working with Yanik Silver and co on solving problems big and small over the past decade through Virgin Unite efforts. 10 years of joy, impact and Maverick mischief together.</p>
-          <div class="testimonial-author">
-            <div>
-              <p class="testimonial-name">Sir Richard Branson</p>
-              <p class="testimonial-role">Founder, Virgin Group</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">After only 9 months, my business has more than doubled, almost tripled. I can already account for these results from the strategies and connections I made at the mastermind. The transformation has been extraordinary.</p>
-          <div class="testimonial-author">
-            <div>
-              <p class="testimonial-name">Bernadette Doyle</p>
-              <p class="testimonial-role">Business Owner, Ireland</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-quote">The best part about this weekend is the people, the connections and the networking. But it's also the knowledge that you gain and the spirit of charity. It's the combination of all of it: the people, the knowledge, and the spirit of giving back together.</p>
-          <div class="testimonial-author">
-            <div>
-              <p class="testimonial-name">Tara Gorez</p>
-              <p class="testimonial-role">Maverick Member</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
           <p class="testimonial-quote">Me and a business partner, who has also been on some Maverick trips, we now run Early To Rise together. If it wasn't for him, I wouldn't be running Early To Rise. Our first conversation about the business was at a Maverick event.</p>
           <div class="testimonial-author">
+            <span class="testimonial-initials">CB</span>
             <div>
               <p class="testimonial-name">Craig Ballantyne</p>
               <p class="testimonial-role">Founder, Early To Rise</p>
@@ -2173,8 +2171,20 @@
         </div>
 
         <div class="testimonial-card">
+          <p class="testimonial-quote">The best part about this weekend is the people, the connections and the networking. But it's also the knowledge that you gain and the spirit of charity. It's the combination of all of it: the people, the knowledge, and the spirit of giving back together.</p>
+          <div class="testimonial-author">
+            <span class="testimonial-initials">TG</span>
+            <div>
+              <p class="testimonial-name">Tara Gorez</p>
+              <p class="testimonial-role">Maverick Member</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
           <p class="testimonial-quote">To have the opportunity to run through your business and ideas with such brilliant, generous, and caring people who want nothing but your success, it's priceless. The emotional support combined with strategic guidance creates a unique power.</p>
           <div class="testimonial-author">
+            <span class="testimonial-initials">KM</span>
             <div>
               <p class="testimonial-name">Kathryn McQuistion</p>
               <p class="testimonial-role">Entrepreneur, Mesquite TX</p>
@@ -2183,8 +2193,9 @@
         </div>
 
         <div class="testimonial-card">
-          <p class="testimonial-quote">What made it special was the Maverick family and the impact and joy we create together. Ten years of joy, impact and Maverick mischief. It's not about the destination. It's about the people.</p>
+          <p class="testimonial-quote">I rediscovered my inner child. Things I had given up when I started adulting. It wasn't until I left that I figured out what I was there for. Reconnecting with the things that made me happy and creative.</p>
           <div class="testimonial-author">
+            <span class="testimonial-initials">GN</span>
             <div>
               <p class="testimonial-name">Gary Nealon</p>
               <p class="testimonial-role">Maverick Member</p>
@@ -2198,6 +2209,18 @@
         <div class="testimonial-dots" id="testimonialDots"></div>
         <button class="testimonial-btn" id="nextTestimonial" aria-label="Next testimonial">&rarr;</button>
       </div>
+    </div>
+  </section>
+
+  <!-- WHO'S IN THE ROOM -->
+  <section class="mission section-pad">
+    <div class="container-narrow text-center fade-in">
+      <p class="eyebrow">The Room</p>
+      <h2 class="section-title">Who You'll Be<br>Surrounded By</h2>
+      <div class="divider"></div>
+      <p class="mission-text">Maverick1000 is an invitation only global network of top entrepreneurs and industry transformers. Past Maverick gatherings have included icons like Sir Richard Branson, Sara Blakely, Tony Hawk, Tim Ferriss, John Paul DeJoria, and Russell Simmons. The community has collectively raised over $3M+ for impact projects.</p>
+      <p class="mission-text">This retreat is intentionally kept small. That means every mastermind session goes deep, every conversation matters, and every person in the room brings something extraordinary to the table. You won't just attend this event. You'll get a room full of top founders working on your biggest challenge, and you'll do the same for them.</p>
+      <p class="mission-highlight">Maverick's lifetime mission: to connect visionary leaders and game changers to catalyze business models and new ideas for solving 100 of the world's most impactful issues by 2100.</p>
     </div>
   </section>
 
@@ -2259,6 +2282,13 @@
         <div class="gallery-overlay"><span>Cosmicpalooza</span></div>
       </div>
     </div>
+  </section>
+
+  <!-- GREEN BREAK -->
+  <section class="green-break">
+    <p class="green-break-eyebrow">The Maverick Way</p>
+    <h2 class="green-break-headline">A Small Room. 3 Days.<br>One Mastermind That Changes Everything.</h2>
+    <p class="green-break-caption">This is what happens when top founders stop performing and start masterminding what matters. Growth, impact, happiness.</p>
   </section>
 
   <!-- VENUE -->
